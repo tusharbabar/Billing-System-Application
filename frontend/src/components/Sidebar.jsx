@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useTranslation } from 'react-i18next';
 import {
   LayoutDashboard, Package, Users, FileText, BarChart3,
   Boxes, LogOut, Sprout, ChevronRight, Settings, HelpCircle,
@@ -9,27 +10,28 @@ import {
 
 
 
-const navItems = [
-  { label: 'Overview', to: '/', icon: LayoutDashboard },
-  { label: 'Create Bill', to: '/billing', icon: FileText },
-  { label: 'Transaction History', to: '/bills', icon: Boxes },
-  { label: 'Pending Dues', to: '/pending-dues', icon: IndianRupee },
-  { label: 'Inventory', to: '/products', icon: Package },
-  { label: 'Stock Alerts', to: '/stock', icon: Sprout },
-  { label: 'Clients', to: '/customers', icon: Users },
-  { label: 'Analytics', to: '/reports', icon: BarChart3 },
-];
-
 export default function Sidebar({ isOpen, onClose }) {
   const { user, logout } = useAuth();
+  const { t } = useTranslation();
+
+  const navItems = [
+    { label: t('menu.overview'), to: '/', icon: LayoutDashboard },
+    { label: t('menu.create_bill'), to: '/billing', icon: FileText },
+    { label: t('menu.transaction_history'), to: '/bills', icon: Boxes },
+    { label: t('menu.pending_dues'), to: '/pending-dues', icon: IndianRupee },
+    { label: t('menu.inventory'), to: '/products', icon: Package },
+    { label: t('menu.stock_alerts'), to: '/stock', icon: Sprout },
+    { label: t('menu.clients'), to: '/customers', icon: Users },
+    { label: t('menu.analytics'), to: '/reports', icon: BarChart3 },
+  ];
 
   return (
     <aside className={`modern-sidebar ${isOpen ? 'open' : ''}`}>
       <div className="sidebar-brand">
         <div className="brand-logo">🌾</div>
         <div className="brand-info">
-          <span className="brand-name">Krushi Seva</span>
-          <span className="brand-tag">Kendra Portal</span>
+          <span className="brand-name">{t('app_title')}</span>
+          <span className="brand-tag">{t('portal_tag')}</span>
         </div>
         <button className="sidebar-close-btn show-mobile" onClick={onClose}>
           <X size={20} />
@@ -39,12 +41,12 @@ export default function Sidebar({ isOpen, onClose }) {
       <div className="sidebar-search">
         <div className="search-box-pill">
           <Search size={14} />
-          <input type="text" placeholder="Search features..." />
+          <input type="text" placeholder={t('search_placeholder')} />
         </div>
       </div>
 
       <nav className="modern-nav">
-        <div className="menu-group">MAIN MENU</div>
+        <div className="menu-group">{t('menu.main_menu')}</div>
         {navItems.map(({ label, to, icon: Icon }) => (
           <NavLink
             key={to}
@@ -63,17 +65,17 @@ export default function Sidebar({ isOpen, onClose }) {
       </nav>
 
       <div className="sidebar-utility">
-        <div className="menu-group">SYSTEM</div>
+        <div className="menu-group">{t('menu.system')}</div>
         <a href="#" className="modern-nav-link">
           <div className="link-content">
             <Settings size={20} />
-            <span>Settings</span>
+            <span>{t('menu.settings')}</span>
           </div>
         </a>
         <a href="#" className="modern-nav-link">
           <div className="link-content">
             <HelpCircle size={20} />
-            <span>Support</span>
+            <span>{t('menu.support')}</span>
           </div>
         </a>
       </div>

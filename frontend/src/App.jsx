@@ -15,6 +15,8 @@ import ProductPage from './pages/ProductPage';
 import CustomerPage from './pages/CustomerPage';
 import BillsHistory from './pages/BillsHistory';
 import PendingDues from './pages/PendingDues';
+import LanguageSwitcher from './components/LanguageSwitcher';
+import { useTranslation } from 'react-i18next';
 
 // Quick Placeholder for missing pages
 const Placeholder = ({ name }) => (
@@ -28,6 +30,7 @@ const Placeholder = ({ name }) => (
 const ProtectedLayout = ({ children }) => {
   const { isAuthenticated, loading, logout } = useAuth();
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const { t } = useTranslation();
   
   if (loading) return <div className="loading-wrap"><div className="loader" /></div>;
   if (!isAuthenticated) return <Navigate to="/login" />;
@@ -45,11 +48,12 @@ const ProtectedLayout = ({ children }) => {
           <div className="mobile-toggle" onClick={() => setIsSidebarOpen(true)}>
             <Menu size={24} />
           </div>
-          <div className="topbar-title">Krushi Seva Kendra</div>
+          <div className="topbar-title">{t('app_title')}</div>
           <div className="flex gap-3" style={{ alignItems: 'center' }}>
-            <div className="badge badge-success hide-mobile">Online</div>
+            <LanguageSwitcher />
+            <div className="badge badge-success hide-mobile">{t('online')}</div>
             <button onClick={logout} className="btn btn-sm btn-danger" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span className="hide-mobile">Logout</span>
+              <span className="hide-mobile">{t('logout')}</span>
               <X size={16} className="show-mobile" />
             </button>
           </div>

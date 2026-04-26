@@ -1,0 +1,56 @@
+{
+  "translation": {
+    "app_title": "Krushi Seva Kendra",
+    "portal_tag": "Portal",
+    "online": "Online",
+    "logout": "Logout",
+    "search_placeholder": "Search features...",
+    "menu": {
+      "main_menu": "MAIN MENU",
+      "system": "SYSTEM",
+      "overview": "Overview",
+      "create_bill": "Create Bill",
+      "transaction_history": "Transaction History",
+      "pending_dues": "Pending Dues",
+      "inventory": "Inventory",
+      "stock_alerts": "Stock Alerts",
+      "clients": "Clients",
+      "analytics": "Analytics",
+      "settings": "Settings",
+      "support": "Support"
+    },
+    "languages": {
+      "en": "English",
+      "hi": "Hindi",
+      "mr": "Marathi"
+    },
+    "billing": {
+      "create_new_bill": "Create New Bill",
+      "subtitle": "Agricultural Retail Billing System",
+      "reset": "Reset",
+      "save_bill": "Save Bill",
+      "customer_info": "Customer Info",
+      "new_customer": "New Customer",
+      "search_customer": "Search by name or phone...",
+      "items_in_bill": "Items in Bill",
+      "product": "Product",
+      "qty": "Qty",
+      "rate": "Rate",
+      "gst_percent": "GST%",
+      "total": "Total",
+      "cart_empty": "Your cart is empty. Add items from the right panel.",
+      "quick_select": "Quick Select",
+      "search_product": "Search product...",
+      "payment_summary": "Payment Summary",
+      "subtotal": "Subtotal",
+      "gst_amount": "GST Amount",
+      "extra_discount": "Extra Discount",
+      "grand_total": "Grand Total",
+      "payment_method": "Payment Method",
+      "received_amount": "Received Amount",
+      "generate_bill": "Generate Bill",
+      "whatsapp": "WhatsApp",
+      "print_save": "Print / Save PDF"
+    }
+  }
+}

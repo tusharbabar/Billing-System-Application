@@ -8,8 +8,10 @@ import {
   CheckCircle2, Send
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useTranslation } from 'react-i18next';
 
 export default function BillingPage() {
+  const { t } = useTranslation();
   const [customers, setCustomers] = useState([]);
   const [products, setProducts] = useState([]);
   const [searchCust, setSearchCust] = useState('');
@@ -188,15 +190,15 @@ export default function BillingPage() {
     <div className="billing-page">
       <div className="page-header">
         <div>
-          <h1 className="page-title">Create New Bill</h1>
-          <p className="page-subtitle">Agricultural Retail Billing System</p>
+          <h1 className="page-title">{t('billing.create_new_bill')}</h1>
+          <p className="page-subtitle">{t('billing.subtitle')}</p>
         </div>
         <div className="flex gap-2">
           <button className="btn btn-outline" onClick={() => window.location.reload()}>
-            <ArrowLeft size={16} /> Reset
+            <ArrowLeft size={16} /> {t('billing.reset')}
           </button>
           <button className="btn btn-primary" onClick={handleSubmit}>
-            <Save size={16} /> Save Bill
+            <Save size={16} /> {t('billing.save_bill')}
           </button>
         </div>
       </div>
@@ -205,9 +207,9 @@ export default function BillingPage() {
         <div className="billing-main">
           <div className="card billing-panel" style={{ marginBottom: '24px', position: 'relative', zIndex: 10 }}>
             <div className="flex-between mb-4">
-              <h3 className="flex items-center gap-2"><Users size={18} className="text-primary" /> Customer Info</h3>
+              <h3 className="flex items-center gap-2"><Users size={18} className="text-primary" /> {t('billing.customer_info')}</h3>
               <button className="btn btn-sm btn-outline" onClick={() => setShowCustModal(true)}>
-                <UserPlus size={14} /> New Customer
+                <UserPlus size={14} /> {t('billing.new_customer')}
               </button>
             </div>
             
@@ -215,7 +217,7 @@ export default function BillingPage() {
               <Search size={16} />
               <input 
                 type="text" 
-                placeholder="Search by name or phone..." 
+                placeholder={t('billing.search_customer')}
                 value={selectedCust ? selectedCust.name : searchCust}
                 onChange={(e) => { setSearchCust(e.target.value); setSelectedCust(null); }}
               />
@@ -245,22 +247,22 @@ export default function BillingPage() {
           </div>
 
           <div className="card billing-panel" style={{ flex: 1 }}>
-            <h3 className="mb-4 flex items-center gap-2"><ShoppingCart size={18} className="text-primary" /> Items in Bill</h3>
+            <h3 className="mb-4 flex items-center gap-2"><ShoppingCart size={18} className="text-primary" /> {t('billing.items_in_bill')}</h3>
             <div className="table-container">
               <table className="bill-items-table">
                 <thead>
                   <tr>
-                    <th>Product</th>
-                    <th style={{ width: 100 }}>Qty</th>
-                    <th style={{ width: 120 }}>Rate</th>
-                    <th style={{ width: 80 }}>GST%</th>
-                    <th style={{ width: 120 }}>Total</th>
+                    <th>{t('billing.product')}</th>
+                    <th style={{ width: 100 }}>{t('billing.qty')}</th>
+                    <th style={{ width: 120 }}>{t('billing.rate')}</th>
+                    <th style={{ width: 80 }}>{t('billing.gst_percent')}</th>
+                    <th style={{ width: 120 }}>{t('billing.total')}</th>
                     <th style={{ width: 40 }}></th>
                   </tr>
                 </thead>
                 <tbody>
                   {items.length === 0 ? (
-                    <tr><td colSpan={6} className="empty-row">Your cart is empty. Add items from the right panel.</td></tr>
+                    <tr><td colSpan={6} className="empty-row">{t('billing.cart_empty')}</td></tr>
                   ) : (
                     items.map(item => (
                       <tr key={item.product_id}>
@@ -292,10 +294,10 @@ export default function BillingPage() {
 
         <div className="billing-side">
           <div className="card billing-panel">
-            <h3 className="mb-4 flex items-center gap-2"><Package size={18} className="text-primary" /> Quick Select</h3>
+            <h3 className="mb-4 flex items-center gap-2"><Package size={18} className="text-primary" /> {t('billing.quick_select')}</h3>
             <div className="search-bar mb-3">
               <Search size={16} />
-              <input type="text" placeholder="Search product..." value={searchProd} onChange={e => setSearchProd(e.target.value)} />
+              <input type="text" placeholder={t('billing.search_product')} value={searchProd} onChange={e => setSearchProd(e.target.value)} />
             </div>
             <div className="product-list">
               {products.filter(p => p.name.toLowerCase().includes(searchProd.toLowerCase())).slice(0, 10).map(p => (
@@ -311,18 +313,18 @@ export default function BillingPage() {
           </div>
 
           <div className="card bill-summary-card">
-            <h3 className="mb-4 text-primary">Payment Summary</h3>
-            <div className="summary-row"><span>Subtotal</span><span>₹{subtotal.toFixed(2)}</span></div>
-            <div className="summary-row"><span>GST Amount</span><span className="text-success">+ ₹{totalGst.toFixed(2)}</span></div>
+            <h3 className="mb-4 text-primary">{t('billing.payment_summary')}</h3>
+            <div className="summary-row"><span>{t('billing.subtotal')}</span><span>₹{subtotal.toFixed(2)}</span></div>
+            <div className="summary-row"><span>{t('billing.gst_amount')}</span><span className="text-success">+ ₹{totalGst.toFixed(2)}</span></div>
             <div className="summary-row">
-              <span>Extra Discount</span>
+              <span>{t('billing.extra_discount')}</span>
               <input type="number" value={totalDiscount} onChange={e => setTotalDiscount(e.target.value)} className="summary-input" />
             </div>
             <div className="divider"></div>
-            <div className="summary-row total"><span>Grand Total</span><span>₹{totalAmount.toFixed(2)}</span></div>
+            <div className="summary-row total"><span>{t('billing.grand_total')}</span><span>₹{totalAmount.toFixed(2)}</span></div>
             
             <div className="form-group mt-4">
-              <label>Payment Method</label>
+              <label>{t('billing.payment_method')}</label>
               <select value={paymentMethod} onChange={e => setPaymentMethod(e.target.value)}>
                 <option value="cash">Cash</option>
                 <option value="upi">UPI / Online</option>
@@ -331,7 +333,7 @@ export default function BillingPage() {
             </div>
 
             <div className="form-group">
-              <label>Received Amount</label>
+              <label>{t('billing.received_amount')}</label>
               <div className="search-bar">
                 <IndianRupee size={14} />
                 <input type="number" placeholder={totalAmount.toFixed(2)} value={amountPaid} onChange={e => setAmountPaid(e.target.value)} />
@@ -339,7 +341,7 @@ export default function BillingPage() {
             </div>
 
             <button className="btn btn-primary btn-lg w-100 mt-4" onClick={handleSubmit}>
-              <Printer size={18} /> Generate Bill
+              <Printer size={18} /> {t('billing.generate_bill')}
             </button>
           </div>
         </div>
@@ -425,9 +427,9 @@ export default function BillingPage() {
               <div className="flex gap-2">
                 <button className="btn btn-outline" onClick={() => setShowSuccessModal(false)}>Close</button>
                 <button className="btn" style={{ backgroundColor: '#25D366', color: 'white', borderColor: '#25D366' }} onClick={handleWhatsAppSend}>
-                  <Send size={16} /> WhatsApp
+                  <Send size={16} /> {t('billing.whatsapp')}
                 </button>
-                <button className="btn btn-primary" onClick={handlePrint}><Printer size={16} /> Print / Save PDF</button>
+                <button className="btn btn-primary" onClick={handlePrint}><Printer size={16} /> {t('billing.print_save')}</button>
               </div>
             </div>
           </div>

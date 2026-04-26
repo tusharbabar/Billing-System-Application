@@ -1,0 +1,56 @@
+{
+  "translation": {
+    "app_title": "कृषि सेवा केंद्र",
+    "portal_tag": "पोर्टल",
+    "online": "ऑनलाइन",
+    "logout": "लॉगआउट",
+    "search_placeholder": "सुविधाएं खोजें...",
+    "menu": {
+      "main_menu": "मुख्य मेनू",
+      "system": "सिस्टम",
+      "overview": "डैशबोर्ड",
+      "create_bill": "बिल बनाएं",
+      "transaction_history": "लेन-देन इतिहास",
+      "pending_dues": "बकाया राशि",
+      "inventory": "इन्वेंट्री",
+      "stock_alerts": "स्टॉक अलर्ट",
+      "clients": "ग्राहक",
+      "analytics": "एनालिटिक्स",
+      "settings": "सेटिंग्स",
+      "support": "सहायता"
+    },
+    "languages": {
+      "en": "English",
+      "hi": "हिंदी",
+      "mr": "मराठी"
+    },
+    "billing": {
+      "create_new_bill": "नया बिल बनाएं",
+      "subtitle": "कृषि खुदरा बिलिंग प्रणाली",
+      "reset": "रीसेट",
+      "save_bill": "बिल सहेजें",
+      "customer_info": "ग्राहक जानकारी",
+      "new_customer": "नया ग्राहक",
+      "search_customer": "नाम या फोन से खोजें...",
+      "items_in_bill": "बिल में आइटम",
+      "product": "उत्पाद",
+      "qty": "मात्रा",
+      "rate": "दर",
+      "gst_percent": "GST%",
+      "total": "कुल",
+      "cart_empty": "आपकी कार्ट खाली है। दाएं पैनल से आइटम जोड़ें।",
+      "quick_select": "त्वरित चयन",
+      "search_product": "उत्पाद खोजें...",
+      "payment_summary": "भुगतान सारांश",
+      "subtotal": "उपकुल",
+      "gst_amount": "GST राशि",
+      "extra_discount": "अतिरिक्त छूट",
+      "grand_total": "कुल राशि",
+      "payment_method": "भुगतान विधि",
+      "received_amount": "प्राप्त राशि",
+      "generate_bill": "बिल जनरेट करें",
+      "whatsapp": "व्हाट्सएप",
+      "print_save": "प्रिंट / PDF सहेजें"
+    }
+  }
+}

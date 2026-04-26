@@ -1,0 +1,56 @@
+{
+  "translation": {
+    "app_title": "कृषी सेवा केंद्र",
+    "portal_tag": "पोर्टल",
+    "online": "ऑनलाइन",
+    "logout": "लॉगआउट",
+    "search_placeholder": "वैशिष्ट्ये शोधा...",
+    "menu": {
+      "main_menu": "मुख्य मेनू",
+      "system": "सिस्टम",
+      "overview": "डॅशबोर्ड",
+      "create_bill": "बिल तयार करा",
+      "transaction_history": "व्यवहार इतिहास",
+      "pending_dues": "थकीत रक्कम",
+      "inventory": "इन्व्हेंटरी",
+      "stock_alerts": "स्टॉक अलर्ट",
+      "clients": "ग्राहक",
+      "analytics": "अॅनालिटिक्स",
+      "settings": "सेटिंग्ज",
+      "support": "मदत"
+    },
+    "languages": {
+      "en": "English",
+      "hi": "हिंदी",
+      "mr": "मराठी"
+    },
+    "billing": {
+      "create_new_bill": "नवीन बिल तयार करा",
+      "subtitle": "कृषी किरकोळ बिलिंग प्रणाली",
+      "reset": "रीसेट",
+      "save_bill": "बिल जतन करा",
+      "customer_info": "ग्राहक माहिती",
+      "new_customer": "नवीन ग्राहक",
+      "search_customer": "नाव किंवा फोनने शोधा...",
+      "items_in_bill": "बिलामधील वस्तू",
+      "product": "उत्पादन",
+      "qty": "नग",
+      "rate": "दर",
+      "gst_percent": "GST%",
+      "total": "एकूण",
+      "cart_empty": "तुमची कार्ट रिकामी आहे. उजव्या पॅनेलवरून वस्तू जोडा.",
+      "quick_select": "त्वरीत निवड",
+      "search_product": "उत्पादन शोधा...",
+      "payment_summary": "पेमेंट सारांश",
+      "subtotal": "उपएकूण",
+      "gst_amount": "GST रक्कम",
+      "extra_discount": "अतिरिक्त सवलत",
+      "grand_total": "एकूण रक्कम",
+      "payment_method": "पेमेंट पद्धत",
+      "received_amount": "प्राप्त रक्कम",
+      "generate_bill": "बिल तयार करा",
+      "whatsapp": "व्हॉट्सॲप",
+      "print_save": "प्रिंट / PDF जतन करा"
+    }
+  }
+}
